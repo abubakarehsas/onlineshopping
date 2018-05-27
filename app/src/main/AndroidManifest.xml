@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appsinventiv.onlineshopping">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="com.appsinventiv.onlineshopping.ClassifiedAdsApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.AddItem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.SubmitAd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.SuccessPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.AdPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://recipe-app.com/recipe" -->
+                <data
+                    android:host="mobilemart.pk"
+                    android:pathPrefix="/ad"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.Register"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.Splash"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.AdPictures"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Category.ChildCategory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Category.MainCategory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.SearchResults"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.Filters"
+            android:label="@string/title_activity_filters"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.MainActivity"
+            android:label="@string/title_activity_home_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.ViewPictures"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.appsinventiv.onlineshopping.Activities.MoreAdsByUser" />
+        <activity android:name="com.appsinventiv.onlineshopping.Activities.ListOfAds" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.MyAds"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name="com.appsinventiv.onlineshopping.Utils.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.appsinventiv.onlineshopping.Utils.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.GPSTrackerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.NoResultsFound"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.EditProfileInfo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.appsinventiv.onlineshopping.Activities.FavouriteAds" />
+        <activity
+            android:name="com.appsinventiv.onlineshopping.Activities.ReportAd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.appsinventiv.onlineshopping.Activities.Help"></activity>
+    </application>
+
+</manifest>
