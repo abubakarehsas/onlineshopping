@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.appsinventiv.onlineshopping.AdObserver;
+import com.appsinventiv.onlineshopping.Utils.AdObserver;
 import com.appsinventiv.onlineshopping.Adapter.SelectedImagesAdapter;
 import com.appsinventiv.onlineshopping.Category.MainCategory;
 import com.appsinventiv.onlineshopping.Classes.GifSizeFilter;
@@ -97,7 +97,7 @@ public class SubmitAd extends AppCompatActivity implements AdObserver {
     @Override
     protected void onPostResume() {
         if (mainCategory == null) {
-            chooseCategoryText.setText("Choose mobile brand");
+            chooseCategoryText.setText("Choose category");
         } else {
             if (childCategory != null) {
 //                if (subChild != null) {
@@ -340,7 +340,7 @@ public class SubmitAd extends AppCompatActivity implements AdObserver {
 
 
         mDatabase.child("ads").child("" + adId).setValue(new AdDetails(adId, Adtitle, AdDescription, username, "" + phonenumber, ci, ""
-                , "Pending", mainCategory, childCategory,
+                , "Active", mainCategory, childCategory,
                 time, AdPrice, 0, latitude, longitude)).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

@@ -27,47 +27,47 @@ public class GPSTrackerActivity extends AppCompatActivity implements
     private GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     LocationRequest mLocationRequest;
-    LocationManager manager;
+//    LocationManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.progress_wheel);
 
-        manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Float a = 00f;
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0L, 0.0f, new android.location.LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                location.getLatitude();
-                location.getLongitude();
-            }
-
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String s) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-
-            }
-        });
+//        manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        Float a = 00f;
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//            return;
+//        }
+//        manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0L, 0.0f, new android.location.LocationListener() {
+//            @Override
+//            public void onLocationChanged(Location location) {
+//                location.getLatitude();
+//                location.getLongitude();
+//            }
+//
+//            @Override
+//            public void onStatusChanged(String s, int i, Bundle bundle) {
+//
+//            }
+//
+//            @Override
+//            public void onProviderEnabled(String s) {
+//
+//            }
+//
+//            @Override
+//            public void onProviderDisabled(String s) {
+//
+//            }
+//        });
 
         progressBar = findViewById(R.id.progressBar2);
 
@@ -101,6 +101,8 @@ public class GPSTrackerActivity extends AppCompatActivity implements
     protected void onStop() {
         progressBar.setVisibility(View.GONE);
         mGoogleApiClient.disconnect();
+
+//        manager.requestLocationUpdates(null);
         super.onStop();
 
     }
@@ -140,5 +142,6 @@ public class GPSTrackerActivity extends AppCompatActivity implements
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
 
 }

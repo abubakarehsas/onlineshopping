@@ -126,9 +126,9 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="25dp"
-                android:text="Samsung"
+                android:text="Mobile Phones"
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <Button
@@ -181,9 +181,9 @@
                 android:layout_marginLeft="5dp"
 
                 android:layout_marginTop="25dp"
-                android:text="Iphone"
+                android:text="Fashion"
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <Button

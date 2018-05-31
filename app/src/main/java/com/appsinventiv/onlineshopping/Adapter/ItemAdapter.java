@@ -77,7 +77,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 holder.title.setText(model.getTitle());
                 holder.location.setText(GetAdAddress.getAddress(context, model.getLattitude(), model.getLongitude()));
 
-                holder.price.setText("Rs " + formattedPrice);
+                holder.price.setText("€ " + formattedPrice);
                 holder.time.setText(getFormattedDate(context, model.getTime()));
                 mDatabase.child("ads").child("" + model.getAdId()).child("pictures").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

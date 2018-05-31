@@ -128,7 +128,7 @@ public class AdPage extends AppCompatActivity {
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_TEXT,
-                        "Please checkout this ad on Mobile Mart.\n\nhttp://onlineshopping.pk/ad/" + adId + "\n\nOr download app from PlayStore\nhttp://bit.ly/MobileMartApp");
+                        "Please checkout this ad on E-Store.\n\nhttp://onlineshopping.pk/ad/" + adId + "\n\nOr download app from PlayStore\nhttp://bit.ly/MobileMartApp");
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Whatsapp");
                 startActivity(Intent.createChooser(shareIntent, "Share ad via.."));
             }
@@ -229,6 +229,7 @@ public class AdPage extends AppCompatActivity {
 
                             }
                         }
+
                     }
                 }
             }
@@ -260,8 +261,8 @@ public class AdPage extends AppCompatActivity {
                         DecimalFormat formatter = new DecimalFormat("#,###,###");
                         String formatedPrice = formatter.format(adDetails.getPrice());
                         title.setText(adDetails.getTitle());
-                        price.setText("Rs " + formatedPrice);
-                        price1.setText("Rs " + formatedPrice);
+                        price.setText("€ " + formatedPrice);
+                        price1.setText("€ " + formatedPrice);
                         time.setText(getFormattedDate(AdPage.this, adDetails.getTime()));
                         date1.setText(getFormattedDate(AdPage.this, adDetails.getTime()));
                         category.setText(adDetails.getMainCategory());

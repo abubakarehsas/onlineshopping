@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
     Button moreAppleAds, moreSamsungAds;
     RelativeLayout submitAd;
     String featuredAdUrl;
-//    ImageView featuredAd;
+    //    ImageView featuredAd;
     private AdView mAdView;
 
 
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListOfAds.class);
-                intent.putExtra("category", "Samsung");
+                intent.putExtra("category", "Mobiles");
                 startActivity(intent);
             }
         });
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListOfAds.class);
-                intent.putExtra("category", "Apple");
+                intent.putExtra("category", "Fashion");
 
                 startActivity(intent);
             }
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity
         TextView navUsername = (TextView) headerView.findViewById(R.id.name_drawer);
         TextView navSubtitle = (TextView) headerView.findViewById(R.id.phone_drawer);
         if (SharedPrefs.getUsername().equalsIgnoreCase("")) {
-            navSubtitle.setText("Welcome to Mobile Mart");
+            navSubtitle.setText("Welcome to E-Store");
 
             navUsername.setText("Login or Signup");
             navUsername.setOnClickListener(new View.OnClickListener() {
@@ -229,33 +229,33 @@ public class MainActivity extends AppCompatActivity
 
     private void initcategories() {
         categoryClassList = new ArrayList<CategoryClass>();
-        CategoryClass c = new CategoryClass("OPPO", R.drawable.oppo_category);
+        CategoryClass c = new CategoryClass("Mobiles", R.drawable.ic_mobile);
         categoryClassList.add(c);
 
-        c = new CategoryClass("LG", R.drawable.lg_category);
+        c = new CategoryClass("Electronics", R.drawable.ic_electronics);
         categoryClassList.add(c);
 
-        c = new CategoryClass("Apple", R.drawable.apple_category);
-        categoryClassList.add(c);
-
-
-        c = new CategoryClass("Huawei", R.drawable.huawei_category);
-        categoryClassList.add(c);
-
-        c = new CategoryClass("Infinix", R.drawable.infinix_category);
-        categoryClassList.add(c);
-
-        c = new CategoryClass("Samsung", R.drawable.samsung_category);
+        c = new CategoryClass("Vehicles", R.drawable.ic_vehicle);
         categoryClassList.add(c);
 
 
-        c = new CategoryClass("Q Mobile", R.drawable.qmobile_category);
+        c = new CategoryClass("Pets", R.drawable.ic_pets);
         categoryClassList.add(c);
 
-        c = new CategoryClass("HTC", R.drawable.htc_category);
+        c = new CategoryClass("Fashion", R.drawable.ic_fashion);
         categoryClassList.add(c);
 
-        c = new CategoryClass("Nokia", R.drawable.nokia_category);
+        c = new CategoryClass("Kids", R.drawable.ic_kids);
+        categoryClassList.add(c);
+
+
+        c = new CategoryClass("Apartments", R.drawable.ic_apartments);
+        categoryClassList.add(c);
+
+        c = new CategoryClass("Furniture", R.drawable.ic_furniture);
+        categoryClassList.add(c);
+
+        c = new CategoryClass("Services", R.drawable.ic_services);
         categoryClassList.add(c);
 
 
@@ -287,12 +287,12 @@ public class MainActivity extends AppCompatActivity
         mDatabase.child("ads").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if (dataSnapshot != null) {
+                if (dataSnapshot.getValue() != null) {
                     AdDetails adDetails = dataSnapshot.getValue(AdDetails.class);
                     if (adDetails != null) {
                         if (adDetails.getAdStatus().equalsIgnoreCase("Active")) {
 
-                            if (adDetails.getMainCategory().equalsIgnoreCase("Samsung")) {
+                            if (adDetails.getMainCategory().equalsIgnoreCase("Mobiles")) {
                                 if (adDetails.getCity().equalsIgnoreCase(SharedPrefs.getUserCity())) {
 
 
@@ -316,6 +316,8 @@ public class MainActivity extends AppCompatActivity
                             }
                         }
                     }
+                } else {
+                    pgsBar.setVisibility(View.GONE);
                 }
             }
 
@@ -357,12 +359,12 @@ public class MainActivity extends AppCompatActivity
         mDatabase.child("ads").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if (dataSnapshot.exists()) {
+                if (dataSnapshot.getValue() != null) {
                     AdDetails adDetails = dataSnapshot.getValue(AdDetails.class);
                     if (adDetails != null) {
                         if (adDetails.getAdStatus().equalsIgnoreCase("Active")) {
 
-                            if (adDetails.getMainCategory().equalsIgnoreCase("Apple")) {
+                            if (adDetails.getMainCategory().equalsIgnoreCase("Fashion")) {
                                 if (adDetails.getCity().equalsIgnoreCase(SharedPrefs.getUserCity())) {
                                     appleAds.add(adDetails);
 
@@ -535,7 +537,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Mobile Martapp\n Download Now\n" + "http://play.google.com/store/apps/details?id=" + MainActivity.this.getPackageName());
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "E-Storeapp\n Download Now\n" + "http://play.google.com/store/apps/details?id=" + MainActivity.this.getPackageName());
             startActivity(Intent.createChooser(shareIntent, "Share App via.."));
 
         } else if (id == R.id.nav_help) {

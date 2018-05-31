@@ -29,7 +29,7 @@ public class MainCategory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_category);
-        MainCategory.this.setTitle("Choose mobile brand ");
+        MainCategory.this.setTitle("Choose category ");
 
         fa = this;
         String category = "main";
@@ -53,41 +53,41 @@ public class MainCategory extends AppCompatActivity {
         CategoryItem categoryItem;
 
         if (intentFromFilters != null) {
-            categoryItem = new CategoryItem("All brands", R.drawable.all_ads_category);
+            categoryItem = new CategoryItem("All ads", R.drawable.all_ads_category);
             itemList.add(categoryItem);
 
-            categoryItem = new CategoryItem("Samsung", R.drawable.samsung_category);
+            categoryItem = new CategoryItem("Mobiles", R.drawable.ic_mobile);
             itemList.add(categoryItem);
         } else {
-            categoryItem = new CategoryItem("Samsung", R.drawable.samsung_category);
+            categoryItem = new CategoryItem("Mobiles", R.drawable.ic_mobile);
             itemList.add(categoryItem);
         }
-        categoryItem = new CategoryItem("Apple", R.drawable.apple_category);
+        categoryItem = new CategoryItem("Electronics", R.drawable.ic_electronics);
         itemList.add(categoryItem);
 
-        categoryItem = new CategoryItem("OPPO", R.drawable.oppo_category);
-        itemList.add(categoryItem);
-
-
-
-        categoryItem = new CategoryItem("Infinix", R.drawable.infinix_category);
+        categoryItem = new CategoryItem("Vehicles", R.drawable.ic_vehicle);
         itemList.add(categoryItem);
 
 
-        categoryItem = new CategoryItem("Nokia", R.drawable.nokia_category);
-        itemList.add(categoryItem);
 
-        categoryItem = new CategoryItem("LG", R.drawable.lg_category);
-        itemList.add(categoryItem);
-
-        categoryItem = new CategoryItem("Huawei", R.drawable.huawei_category);
+        categoryItem = new CategoryItem("Pets", R.drawable.ic_pets);
         itemList.add(categoryItem);
 
 
-        categoryItem = new CategoryItem("HTC", R.drawable.htc_category);
+        categoryItem = new CategoryItem("Fashion", R.drawable.ic_fashion);
         itemList.add(categoryItem);
 
-        categoryItem = new CategoryItem("Motorola", R.drawable.motorola_category);
+        categoryItem = new CategoryItem("Kids", R.drawable.ic_kids);
+        itemList.add(categoryItem);
+
+        categoryItem = new CategoryItem("Apartments", R.drawable.ic_apartments);
+        itemList.add(categoryItem);
+
+
+        categoryItem = new CategoryItem("Furniture", R.drawable.ic_furniture);
+        itemList.add(categoryItem);
+
+        categoryItem = new CategoryItem("Services", R.drawable.ic_services);
         itemList.add(categoryItem);
 
 

@@ -23,7 +23,7 @@ public class NotificationAsync extends AsyncTask<String, String, String> {
     Context context;
 
 
-    public final static String AUTH_KEY_FCM_LIVE = "AAAAVdGVg7s:APA91bGPLAXqJFD8eAo5L02q5N-_igfsMxm6fUfzfa2WpMwDOLiBgqnHoU-EuFjpR1yj_ZuTnsqQFvdYOoZfYYMsUG0VEP6uPFLcBaFzc40u0r9Mvl_qY8DWYvLsVJENVXFkO0z-lOge";
+    public final static String AUTH_KEY_FCM_LIVE = "AAAAgTe08BE:APA91bE9UKwolzOjWJCYdOHdB7MhzpUeke3Yvs9whgcy7X_ECSbOGCrC64z4el66SN3Uco3XogIZKgo6uBMYPZ7uX_WJBPPXTqAfIbCLRx1PLuM2w_mm6rHnMJCGqARZNe7ckkjO6Ivl";
     public final static String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
 
     public NotificationAsync(Context context) {

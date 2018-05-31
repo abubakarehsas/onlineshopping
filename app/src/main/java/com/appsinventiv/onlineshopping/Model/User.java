@@ -11,11 +11,12 @@ public class User {
     Double latitude, longitude;
     Long time;
     ArrayList<String> favourites;
+    ArrayList<String> nearbyAdsNotified;
 
     public User() {
     }
 
-    public User(String name, String username, String email, String password, String phone, String city, String active, String code, String codeSent, String fcmKey, Double latitude, Double longitude, Long time, ArrayList<String> favourites) {
+    public User(String name, String username, String email, String password, String phone, String city, String active, String code, String codeSent, String fcmKey, Double latitude, Double longitude, Long time, ArrayList<String> favourites, ArrayList<String> nearbyAdsNotified) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -30,6 +31,15 @@ public class User {
         this.longitude = longitude;
         this.time = time;
         this.favourites = favourites;
+        this.nearbyAdsNotified = nearbyAdsNotified;
+    }
+
+    public ArrayList<String> getNearbyAdsNotified() {
+        return nearbyAdsNotified;
+    }
+
+    public void setNearbyAdsNotified(ArrayList<String> nearbyAdsNotified) {
+        this.nearbyAdsNotified = nearbyAdsNotified;
     }
 
     public ArrayList<String> getFavourites() {

@@ -62,7 +62,7 @@ public class AdStatusAdapter extends RecyclerView.Adapter<AdStatusAdapter.ViewHo
         holder.title.setText(model.getTitle());
         DecimalFormat formatter = new DecimalFormat("#,###,###");
         String formatedPrice = formatter.format(model.getPrice());
-        holder.price.setText("Rs " + formatedPrice);
+        holder.price.setText("€ " + formatedPrice);
         holder.time.setText(CommonUtils.getFormattedDate( model.getTime()));
 
         if(model.getAdStatus().equalsIgnoreCase("Active")){

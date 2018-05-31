@@ -183,9 +183,11 @@ public class Register extends AppCompatActivity {
             username = username.trim();
             username = username.toLowerCase();
             ArrayList<String> favoruiteAds=new ArrayList<>();
+            ArrayList<String> nearbyAdsNotified=new ArrayList<>();
+
             mDatabase
                     .child(username)
-                    .setValue(new User(fullname, username, email, password, "" + phone, city, "no", "" + randomPIN, "no", SharedPrefs.getFcmKey(), latitude, longitude, time,favoruiteAds))
+                    .setValue(new User(fullname, username, email, password, "" + phone, city, "no", "" + randomPIN, "no", SharedPrefs.getFcmKey(), latitude, longitude, time,favoruiteAds,nearbyAdsNotified))
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {

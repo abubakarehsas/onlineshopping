@@ -46,6 +46,20 @@ public class CommonUtils {
             return DateFormat.format("dd MMM , h:mm aa", smsTime).toString();
         }
     }
+    public static double KilometerDistanceBetweenPoints(Double lat_a, Double lng_a, Double lat_b, Double lng_b) {
+        float pk = (float) (180.f/Math.PI);
 
+        Double a1 = lat_a / pk;
+        Double a2 = lng_a / pk;
+        Double b1 = lat_b / pk;
+        Double b2 = lng_b / pk;
+
+        double t1 = Math.cos(a1) * Math.cos(a2) * Math.cos(b1) * Math.cos(b2);
+        double t2 = Math.cos(a1) * Math.sin(a2) * Math.cos(b1) * Math.sin(b2);
+        double t3 = Math.sin(a1) * Math.sin(b1);
+        double tt = Math.acos(t1 + t2 + t3);
+
+        return 6366 * tt;
+    }
 
 }

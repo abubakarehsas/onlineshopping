@@ -59,7 +59,7 @@ public class HomepageAppleAdapter extends RecyclerView.Adapter<HomepageAppleAdap
         DecimalFormat formatter = new DecimalFormat("##,###,###");
         String formatedPrice = formatter.format(model.getPrice());
         holder.adTitleView.setText(model.getTitle());
-        holder.adPriceView.setText("Rs "+formatedPrice);
+        holder.adPriceView.setText("€ "+formatedPrice);
         mDatabase.child("ads").child(""+model.getAdId()).child("pictures").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

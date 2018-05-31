@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.appsinventiv.onlineshopping.Services.NotifyNearByAdsService;
 import com.appsinventiv.onlineshopping.R;
+import com.appsinventiv.onlineshopping.Utils.SharedPrefs;
 
 public class Splash extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 2000;
@@ -17,17 +19,9 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         splashImage = findViewById(R.id.splashImage);
-
-
-//        if(SharedPrefs.getSplashImage()==null||SharedPrefs.getSplashImage().equals("")){
-//            CommonUtils.showToast("here");
-//            Glide.with(this).load(R.drawable.main_logo).into(splashImage);
-//
-//        }else {
-//            CommonUtils.showToast("here2");
-//
-//            Glide.with(this).load(SharedPrefs.getSplashImage()).into(splashImage);
-//        }
+        if (SharedPrefs.getIsLoggedIn().equals("yes")) {
+            startService(new Intent(this, NotifyNearByAdsService.class));
+        }
 
         new Handler().postDelayed(new Runnable() {
 
@@ -47,7 +41,6 @@ public class Splash extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
-//alias:onlineshopping
-        //pass:Alijangreat99.
+
     }
 }

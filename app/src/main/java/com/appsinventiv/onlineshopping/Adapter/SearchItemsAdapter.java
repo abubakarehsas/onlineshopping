@@ -60,7 +60,7 @@ public class SearchItemsAdapter extends RecyclerView.Adapter{
             String formatedPrice = formatter.format(model.getPrice());
             final AdDetails adId=itemList.get(position);
             ((ItemViewHolder) holder).title.setText(model.getTitle());
-            ((ItemViewHolder) holder).price.setText("Rs "+formatedPrice);
+            ((ItemViewHolder) holder).price.setText("€ "+formatedPrice);
             ((ItemViewHolder) holder).time.setText(getFormattedDate(ctx,model.getTime()));
             Glide.with(ctx).load(model.getPicUrl()).into((((ItemViewHolder) holder).thumbnail));
 

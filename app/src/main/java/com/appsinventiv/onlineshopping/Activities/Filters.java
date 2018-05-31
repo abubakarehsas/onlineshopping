@@ -27,7 +27,7 @@ public class Filters extends AppCompatActivity {
     @Override
     protected void onPostResume() {
         if (mainCategory == null) {
-            chooseCategory.setText("Choose mobile brand");
+            chooseCategory.setText("Choose category");
         } else {
             if (childCategory != null) {
 //                if (subChild != null) {
@@ -75,7 +75,7 @@ public class Filters extends AppCompatActivity {
             }
         });
 
-        final String[] items = new String[]{"Select one", "Attock","Faisalabad","Hyderabad","Islamabad","Karachi","Lahore","Mardan","Multan","Peshawar","Quetta","Sialkot"};
+        final String[] items = new String[]{"Select one", "Kochani","Shtip","Vinica","Probistip"};
         Spinner spinner = (Spinner) findViewById(R.id.locationchoose);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, items);

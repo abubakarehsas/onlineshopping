@@ -69,7 +69,7 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
 
-                        android:text="Choose mobile brand" />
+                        android:text="Choose category" />
 
                     <TextView
                         android:id="@+id/choose_category"

@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name="com.appsinventiv.onlineshopping.ClassifiedAdsApplication"
+        android:name=".ClassifiedAdsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,17 +23,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.AddItem"
+            android:name=".Activities.AddItem"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.SubmitAd"
+            android:name=".Activities.SubmitAd"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.SuccessPage"
+            android:name=".Activities.SuccessPage"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.AdPage"
+            android:name=".Activities.AdPage"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -41,7 +41,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "http://recipe-app.com/recipe" -->
+                <!--  Accepts URIs that begin with "http://recipe-app.com/recipe" -->
                 <data
                     android:host="mobilemart.pk"
                     android:pathPrefix="/ad"
@@ -49,16 +49,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.Register"
+            android:name=".Activities.Register"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.Login"
+            android:name=".Activities.Login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.Splash"
+            android:name=".Activities.Splash"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,64 +67,91 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.AdPictures"
+            android:name=".Activities.AdPictures"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Category.ChildCategory"
+            android:name=".Category.ChildCategory"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Category.MainCategory"
+            android:name=".Category.MainCategory"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.SearchResults"
+            android:name=".Activities.SearchResults"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.Filters"
+            android:name=".Activities.Filters"
             android:label="@string/title_activity_filters"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/title_activity_home_page"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.ViewPictures"
+            android:name=".Activities.ViewPictures"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.appsinventiv.onlineshopping.Activities.MoreAdsByUser" />
-        <activity android:name="com.appsinventiv.onlineshopping.Activities.ListOfAds" />
+        <activity android:name=".Activities.MoreAdsByUser" />
+        <activity android:name=".Activities.ListOfAds" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.MyAds"
+            android:name=".Activities.MyAds"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <service android:name="com.appsinventiv.onlineshopping.Utils.MyFirebaseInstanceIDService">
+        <service android:name=".Utils.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.appsinventiv.onlineshopping.Utils.MyFirebaseMessagingService">
+        <service android:name=".Utils.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.GPSTrackerActivity"
+            android:name=".Activities.GPSTrackerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.NoResultsFound"
+            android:name=".Activities.NoResultsFound"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.EditProfileInfo"
+            android:name=".Activities.EditProfileInfo"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="com.appsinventiv.onlineshopping.Activities.FavouriteAds" />
+        <activity android:name=".Activities.FavouriteAds" />
         <activity
-            android:name="com.appsinventiv.onlineshopping.Activities.ReportAd"
+            android:name=".Activities.ReportAd"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="com.appsinventiv.onlineshopping.Activities.Help"></activity>
+        <activity android:name=".Activities.Help" />
+
+        <service
+            android:name=".Services.NotifyNearByAdsService"
+            android:label="Word service"
+            android:permission="android.permission.BIND_JOB_SERVICE"></service>
+
+        <receiver android:name=".Receievers.BroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Receievers.SensorRestarterBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped">
+            <intent-filter>
+                <action android:name="uk.ac.shef.oak.ActivityRecognition.RestartSensor" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Activities.AdsNearby"></activity>
     </application>
 
 </manifest>
